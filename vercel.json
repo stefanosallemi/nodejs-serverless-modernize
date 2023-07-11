@@ -1,10 +1,26 @@
 {
-    "version": 2,
-    "name": "api-server",
-    "builds": [
-       { "": "server.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-       { "": "/(.*)", "dest": "/server.js" }
-    ]
+   "version": 2,
+   "routes": [
+     {
+       "src": "/api/register",
+       "dest": "api/server.js"
+     },
+     {
+       "src": "/api/login",
+       "dest": "api/server.js"
+     },
+     {
+       "src": "/api/logout",
+       "dest": "api/server.js"
+     },
+     {
+       "src": "/api/check-username",
+       "dest": "api/server.js"
+     },
+     {
+       "src": "/(.*)",
+       "dest": "api/server.js"
+     }
+   ]
  }
+ 

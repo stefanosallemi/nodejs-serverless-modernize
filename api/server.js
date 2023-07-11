@@ -31,6 +31,10 @@ function generateAuthToken(uname) {
   return jwt.sign({ uname }, 'your-secret-key', { expiresIn: '1h' });
 }
 
+app.get('/api', (req, res) => {
+console.log('valid connection')
+});
+
 app.post('/api/register', (req, res) => {
   const { name, uname, password } = req.body;
 
